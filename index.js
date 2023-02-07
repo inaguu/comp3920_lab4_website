@@ -47,45 +47,14 @@ app.get('/', (req,res) => {
     res.send(html);
 });
 
-app.get('/about', (req,res) => {
-    var color = req.query.color;
-
-    res.send("<h1 style='color:"+color+";'>Patrick Guichon</h1>");
-});
-
-app.get('/contact', (req,res) => {
-    var missingEmail = req.query.missing;
-    var html = `
-        email address:
-        <form action='/submitEmail' method='post'>
-            <input name='email' type='text' placeholder='email'>
-            <button>Submit</button>
-        </form>
-    `;
-    if (missingEmail) {
-        html += "<br> email is required";
-    }
-    res.send(html);
-});
-
-app.post('/submitEmail', (req,res) => {
-    var email = req.body.email;
-    if (!email) {
-        res.redirect('/contact?missing=1');
-    }
-    else {
-        res.send("Thanks for subscribing with your email: "+email);
-    }
-});
-
 app.get('/signup', (req,res) => {
     var missingField = req.query.missing;
 
     var html = `
     <form action='/submitUser' method='post'>
-    <input name='name' type='text' placeholder='name'>
-    <input name='email' type='text' placeholder='email'>
-    <input name='password' type='password' placeholder='password'>
+    <input name='name' type='text' placeholder='name' required>
+    <input name='email' type='text' placeholder='email' required>
+    <input name='password' type='password' placeholder='password' required>
     <button>Submit</button>
     </form>
     `;
@@ -197,7 +166,6 @@ app.get('/members', (req,res) => {
         res.send("no");
     }
 });
-
 
 app.use(express.static(__dirname + "/public"));
 
