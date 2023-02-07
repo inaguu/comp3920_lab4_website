@@ -51,10 +51,14 @@ app.get('/signup', (req,res) => {
     var missingField = req.query.missing;
 
     var html = `
+    create user
     <form action='/submitUser' method='post'>
     <input name='name' type='text' placeholder='name' required>
+    <br></br>
     <input name='email' type='text' placeholder='email' required>
+    <br></br>
     <input name='password' type='password' placeholder='password' required>
+    <br></br>
     <button>Submit</button>
     </form>
     `;
@@ -71,7 +75,9 @@ app.get('/login', (req,res) => {
     log in
     <form action='/loggingin' method='post'>
     <input name='email' type='text' placeholder='email'>
+    <br></br>
     <input name='password' type='password' placeholder='password'>
+    <br></br>
     <button>Submit</button>
     </form>
     `;
