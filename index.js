@@ -174,7 +174,7 @@ function isAdmin(req) {
 
 function adminAuthorization(req, res, next) {
 	if (!isAdmin(req)) {
-        res.render("/");
+        res.redirect("/");
         return;
 	}
 	else {
