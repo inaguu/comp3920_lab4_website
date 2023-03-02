@@ -1,0 +1,11 @@
+<%- include("templates/header") %> 
+    <% if (locals.img == 0) { %>
+        <h1>Hello, <%= username %> <br></br> <img src='/reverse-nozumi.gif' style='width:250px;'> <br></br> <form action='/logout' method='get'> <button>Log Out</button> </form>
+    <% } %>
+    <% if (locals.img == 1) { %>
+        <h1>Hello, <%= username %> <br></br> <img src='/stonks-up-stongs.gif' style='width:250px;'> <br></br> <form action='/logout' method='get'> <button>Log Out</button> </form>
+    <% } %>
+    <% if (locals.img == 2) { %>
+        <h1>Hello, <%= username %> <br></br> <img src='/bye-bye-bye.gif' style='width:250px;'> <br></br> <form action='/logout' method='get'> <button>Log Out</button> </form>
+    <% } %>
+<%- include("templates/footer") %> 

@@ -1,0 +1,14 @@
+<%- include("templates/header") %> 
+    <h1>Hello,  <%= username %></h1>
+    <form action='/loggedin/members' method='get'>
+        <button>Go to Members Area</button>
+    </form>
+    <br>
+    <form action='/loggedin/todo' method='get'>
+        <button>Go to To-Do List</button>
+    </form>
+    <br>
+    <form action='/logout' method='get'>
+        <button>Log Out</button>
+    </form>
+<%- include("templates/footer") %> 

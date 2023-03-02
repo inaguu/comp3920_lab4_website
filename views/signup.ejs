@@ -1,0 +1,15 @@
+<%- include("templates/header") %> 
+    create user
+    <form action='/submitUser' method='post'>
+    <input name='name' type='text' placeholder='name'>
+    <br></br>
+    <input name='email' type='text' placeholder='email'>
+    <br></br>
+    <input name='password' type='password' placeholder='password'>
+    <br></br>
+    <% if (locals.missingField) { %>
+        <div style="color: darkred;">All Fields are required.</div>
+    <% } %>
+    <button>Submit</button>
+    </form>
+<%- include("templates/footer") %> 

@@ -1,0 +1,28 @@
+<%- include("templates/header") %> 
+    <style>
+    table, th, td {
+      border:1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+    }
+    </style>
+    You are logged in as <%= username %>.
+    <br>
+    <br>
+    <div style="color: darkred;">Viewing todos for user: <%= user_username %></div>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Description</th>
+        </tr>
+        <% let i=0; %>
+		<% for(i=0; i < todo.length; i++) { %>
+        <%- include('templates/todo', {todo: todo[i], number: i})  %> 
+        <% } %> 
+    </table>
+
+<%- include("templates/footer") %> 
